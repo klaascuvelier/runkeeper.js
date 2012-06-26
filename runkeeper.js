@@ -53,19 +53,19 @@ function help()
     var log = console.log;
 
     log('');
-    log('Runkeeper.js by Klaas Cuvelier', true);
-    log('------------------------------', true);
-    log('', true);
-    log('Runkeeper.js is a NodeJS script which allows you to export data from the Runkeeper® database file', true);
-    log('', true);
-    log('Usage:', true);
-    log('node ./runkeeper.js <input-file> [action] [extra arguments] [output-file]', true);
-    log('', true);
-    log('Possible actions:', true);
-    log(' - list:', true);
-    log('     shows list with all trips in the input file', true);
-    log(' - export <trip-id>:', true);
-    log('     export a specific trip', true);
+    log('Runkeeper.js by Klaas Cuvelier');
+    log('------------------------------');
+    log('');
+    log('Runkeeper.js is a NodeJS script which allows you to export data from the Runkeeper® database file');
+    log('');
+    log('Usage:');
+    log('node ./runkeeper.js <input-file> [action] [extra arguments] [output-file]');
+    log('');
+    log('Possible actions:');
+    log(' - list:');
+    log('     shows list with all trips in the input file');
+    log(' - export <trip-id>:');
+    log('     export a specific trip');
 
 }
 
@@ -223,7 +223,7 @@ function output()
  */
 function buffer(data, newLine)
 {
-    outputBuffer += data + (newLine === true ? "\n" : '');
+    outputBuffer += data + (newLine ? "\n" : '');
 }
 
 
