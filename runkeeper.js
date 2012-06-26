@@ -205,14 +205,12 @@ function output()
     if (!outputFile)
     {
         console.log(outputBuffer);
+        exit();
     }
     else
     {
         writeBuffer(outputBuffer);
     }
-
-
-    exit();
 }
 
 
@@ -279,6 +277,11 @@ function ellipsis(input, length)
 
 
 
+/**
+ * Format given date to YYYY/MM/DD HH:II
+ *
+ * @param double date
+ */
 function formatDate(date)
 {
     date = new Date(date * 1000);
@@ -287,19 +290,17 @@ function formatDate(date)
 
 
 
-
-
-
-
 /**
  * Write output buffer to file
  */
 function writeBuffer()
 {
-    fs.writeFile(outputFile, outputBuffer, function (error) {
+    fs.writeFile(outputFile, outputBuffer, 'utf8', function (error) {
         if (error)
         {
             console.log('Could not write the file', error);
         }
+
+        exit();
     });
 }
